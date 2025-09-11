@@ -86,7 +86,7 @@ const showDropdown2 = ref(false)
   
 
     <img src="/hero/2624-920-white.jpg.thumb.webp" class=" w-5/6 mx-5"/>
-    <p class="absolute top-13/4 left-1/12 p-5 text-2xl font-bold m-2">OPPO Find X8</p>
+    <p class="absolute top-20/6 left-1/12 pt-10 text-2xl font-bold m-2">OPPO Find X8</p>
     <div class="bg-green-200 absolute top-11/3 left-1/12 m-3">
       <div class="p-3">Powerful Camera. <br>
       Powerful AI.
@@ -148,15 +148,20 @@ const showDropdown2 = ref(false)
   </div>
 
 
-  <div class="flex flex-row space-x-3 m-7">
+  <div class="max-w-6xl mx-auto">
+    <div class="overflow-x-auto py-4">
+      <div class="flex gap-4 px-2">
    
     <Event image="/oppo/about-v1.jpg.thumb.webp" title="About OPPO" desc="Make Your Moment"/>
      <Event image="/oppo/1728_1152.png" title="OPPO AI" desc="Leading AI Experience"/>
      <Event image="/oppo/1728-1152.jpg.thumb.webp" title="ColorOS 15 Smart & Smooth" desc="New Experience of ColorOS 15"/>
-     <!-- <Event image="/event/Factory-210.png.thumb.webp" title="Discover OPPO Factory" desc="Dapatkan pengalaman eksklusif untuk melihat langsung proses produksi perangkat OPPO"/>
-     <Event image="/event/Membership-210.png.thumb.webp" title="My OPPO Membership" desc="Dapatkan promo eksklusif menarik disini"/> -->
+     <Event image="/oppo/great-products_1728-1152.png.thumb.webp" title="Produk Hebat Menciptakan Pengalaman Terbaik" desc="kisah OPPO"/>
+     <Event image="/oppo/OPPO-5G.jpg.thumb.webp" title="OPPO 5G" desc="Connect to the world Around you with 5G"/>
+     <Event image="/oppo/Imagy-Technology.jpg.thumb.webp" title="Imaging Technology" desc="Capture Memorable Moments with OPPO"/>
+     <Event image="/oppo/events_newsroom_231211.jpeg.thumb.webp" title="OPPO Newsroom" desc="Latest News"/>
 
-     
+        </div>     
+    </div>
   </div>
 
   <div class="bg-slate-200 p-7">
