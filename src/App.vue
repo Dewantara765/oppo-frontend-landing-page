@@ -9,34 +9,53 @@ import Accordion from './components/Accordion.vue';
 const showDropdown1 = ref(false)
 const showDropdown2 = ref(false)
 
+const openMenu = ref(false)
+
 
 </script>
 
 <template>
-  <div class="flex flex-row place-content-between">
-    <div class="flex flex-row space-x-4 px-3 py-3 ">
-      <svg xmlns="http://www.w3.org/2000/svg" width="85" height="22" viewBox="0 0 85 22" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M10.0905 13.7856H10.0898H10.0888C5.80572 13.7403 3.03806 11.7032 3.03806 8.59604C3.03806 5.48888 5.80572 3.45175 10.0888 3.40651C14.3738 3.45175 17.1411 5.48888 17.1411 8.59604C17.1411 11.7032 14.3738 13.7403 10.0905 13.7856ZM10.2155 0.898183C10.2144 0.89832 10.1292 0.896816 10.0863 0.895996C10.0424 0.896543 9.95715 0.898183 9.95715 0.898183C4.09395 0.993718 0 4.1591 0 8.5961C0 13.0331 4.09395 16.1986 9.95578 16.294C9.95578 16.294 10.0424 16.2948 10.0851 16.2946C10.1299 16.295 10.2157 16.294 10.2157 16.294C16.0774 16.1986 20.1712 13.0331 20.1712 8.5961C20.1712 4.1591 16.0774 0.993718 10.2155 0.898183Z" fill="black" class="fill"></path> <path fill-rule="evenodd" clip-rule="evenodd" d="M74.9195 13.7856H74.9188H74.9177C70.6348 13.7403 67.8671 11.7032 67.8671 8.59604C67.8671 5.48888 70.6348 3.45175 74.9177 3.40651C79.2027 3.45175 81.9701 5.48888 81.9701 8.59604C81.9701 11.7032 79.2027 13.7403 74.9195 13.7856ZM75.0445 0.898183C75.0434 0.89832 74.9584 0.896816 74.9152 0.895996C74.8715 0.896543 74.7862 0.898183 74.7862 0.898183C68.923 0.993718 64.829 4.1591 64.829 8.5961C64.829 13.0331 68.923 16.1986 74.785 16.294C74.785 16.294 74.8715 16.2948 74.9141 16.2946C74.9591 16.295 75.0448 16.294 75.0448 16.294C80.9065 16.1986 85.0003 13.0331 85.0003 8.5961C85.0003 4.1591 80.9065 0.993718 75.0445 0.898183Z" fill="black" class="fill"></path> <path fill-rule="evenodd" clip-rule="evenodd" d="M53.3494 13.7856H53.3487H53.3477C49.0648 13.7403 46.2971 11.7032 46.2971 8.59604C46.2971 5.48888 49.0648 3.45175 53.3477 3.40651C57.6326 3.45175 60.4001 5.48888 60.4001 8.59604C60.4001 11.7032 57.6326 13.7403 53.3494 13.7856ZM53.4745 0.898183C53.4734 0.89832 53.3884 0.896816 53.3452 0.895996C53.3015 0.896543 53.2162 0.898183 53.2162 0.898183C50.423 0.943695 48.032 1.68638 46.2932 2.93081V1.61846H43.2591V21.1043H46.2932V14.2617C48.0317 15.506 50.4223 16.2486 53.2149 16.294C53.2151 16.2942 53.3015 16.2948 53.344 16.2946C53.3891 16.295 53.4747 16.294 53.4747 16.294C59.3364 16.1986 63.4303 13.0331 63.4303 8.5961C63.4303 4.1591 59.3364 0.993718 53.4745 0.898183Z" fill="black" class="fill"></path> <path fill-rule="evenodd" clip-rule="evenodd" d="M31.7169 13.7856H31.7162H31.7154C27.4323 13.7403 24.6646 11.7032 24.6646 8.59604C24.6646 5.48888 27.4323 3.45175 31.7154 3.40651C36.0003 3.45175 38.7677 5.48888 38.7677 8.59604C38.7677 11.7032 36.0003 13.7403 31.7169 13.7856ZM31.8472 0.898183C31.8459 0.89832 31.7609 0.896816 31.7179 0.895996C31.674 0.896543 31.5887 0.898183 31.5887 0.898183C28.7955 0.943695 26.4045 1.68638 24.6657 2.93081V1.61846H21.6317V21.1043H24.6657V14.2617C26.4044 15.506 28.7949 16.2486 31.5873 16.294C31.5873 16.294 31.674 16.2948 31.7166 16.2946C31.7616 16.295 31.8473 16.294 31.8473 16.294C37.709 16.1986 41.8028 13.0331 41.8028 8.5961C41.8028 4.1591 37.709 0.993718 31.8472 0.898183Z" fill="black" class="fill"></path></svg>
-        <div @mouseover="showDropdown1 = !showDropdown1" class="text-gray-700 hover:text-blue-700" >Smartphone</div>
-        <div @mouseover="showDropdown2 = !showDropdown2" class="text-gray-700 hover:text-blue-700">Tablet</div>
-        <div>Audio</div>
-        <div>Wearables</div>
-        <div>Tentang OPPO</div>
+   
+    <div @click="openMenu = !openMenu">
+        <button type="button"  
+        class="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
+        aria-controls="mobile-menu" aria-expanded="false">
+        <span class="sr-only">Open main menu</span>
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+            d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
     </div>
-    <div class="flex flex-row space-x-4 px-3 py-3 text-gray-700">
-        <div>Online Store</div>
-        <div>Komunitas</div>
-        <div>ColorOS</div>
-        <div>Dukungan</div>
-        <div>
-          <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/></svg>
-          
-        </div>
-        <div>
-          <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="M234-276q51-39 114-61.5T480-360q69 0 132 22.5T726-276q35-41 54.5-93T800-480q0-133-93.5-226.5T480-800q-133 0-226.5 93.5T160-480q0 59 19.5 111t54.5 93Zm246-164q-59 0-99.5-40.5T340-580q0-59 40.5-99.5T480-720q59 0 99.5 40.5T620-580q0 59-40.5 99.5T480-440Zm0 360q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q53 0 100-15.5t86-44.5q-39-29-86-44.5T480-280q-53 0-100 15.5T294-220q39 29 86 44.5T480-160Zm0-360q26 0 43-17t17-43q0-26-17-43t-43-17q-26 0-43 17t-17 43q0 26 17 43t43 17Zm0-60Zm0 360Z"/></svg>
-        </div>
+     <svg xmlns="http://www.w3.org/2000/svg" width="85" height="22" viewBox="0 0 85 22" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M10.0905 13.7856H10.0898H10.0888C5.80572 13.7403 3.03806 11.7032 3.03806 8.59604C3.03806 5.48888 5.80572 3.45175 10.0888 3.40651C14.3738 3.45175 17.1411 5.48888 17.1411 8.59604C17.1411 11.7032 14.3738 13.7403 10.0905 13.7856ZM10.2155 0.898183C10.2144 0.89832 10.1292 0.896816 10.0863 0.895996C10.0424 0.896543 9.95715 0.898183 9.95715 0.898183C4.09395 0.993718 0 4.1591 0 8.5961C0 13.0331 4.09395 16.1986 9.95578 16.294C9.95578 16.294 10.0424 16.2948 10.0851 16.2946C10.1299 16.295 10.2157 16.294 10.2157 16.294C16.0774 16.1986 20.1712 13.0331 20.1712 8.5961C20.1712 4.1591 16.0774 0.993718 10.2155 0.898183Z" fill="black" class="fill"></path> <path fill-rule="evenodd" clip-rule="evenodd" d="M74.9195 13.7856H74.9188H74.9177C70.6348 13.7403 67.8671 11.7032 67.8671 8.59604C67.8671 5.48888 70.6348 3.45175 74.9177 3.40651C79.2027 3.45175 81.9701 5.48888 81.9701 8.59604C81.9701 11.7032 79.2027 13.7403 74.9195 13.7856ZM75.0445 0.898183C75.0434 0.89832 74.9584 0.896816 74.9152 0.895996C74.8715 0.896543 74.7862 0.898183 74.7862 0.898183C68.923 0.993718 64.829 4.1591 64.829 8.5961C64.829 13.0331 68.923 16.1986 74.785 16.294C74.785 16.294 74.8715 16.2948 74.9141 16.2946C74.9591 16.295 75.0448 16.294 75.0448 16.294C80.9065 16.1986 85.0003 13.0331 85.0003 8.5961C85.0003 4.1591 80.9065 0.993718 75.0445 0.898183Z" fill="black" class="fill"></path> <path fill-rule="evenodd" clip-rule="evenodd" d="M53.3494 13.7856H53.3487H53.3477C49.0648 13.7403 46.2971 11.7032 46.2971 8.59604C46.2971 5.48888 49.0648 3.45175 53.3477 3.40651C57.6326 3.45175 60.4001 5.48888 60.4001 8.59604C60.4001 11.7032 57.6326 13.7403 53.3494 13.7856ZM53.4745 0.898183C53.4734 0.89832 53.3884 0.896816 53.3452 0.895996C53.3015 0.896543 53.2162 0.898183 53.2162 0.898183C50.423 0.943695 48.032 1.68638 46.2932 2.93081V1.61846H43.2591V21.1043H46.2932V14.2617C48.0317 15.506 50.4223 16.2486 53.2149 16.294C53.2151 16.2942 53.3015 16.2948 53.344 16.2946C53.3891 16.295 53.4747 16.294 53.4747 16.294C59.3364 16.1986 63.4303 13.0331 63.4303 8.5961C63.4303 4.1591 59.3364 0.993718 53.4745 0.898183Z" fill="black" class="fill"></path> <path fill-rule="evenodd" clip-rule="evenodd" d="M31.7169 13.7856H31.7162H31.7154C27.4323 13.7403 24.6646 11.7032 24.6646 8.59604C24.6646 5.48888 27.4323 3.45175 31.7154 3.40651C36.0003 3.45175 38.7677 5.48888 38.7677 8.59604C38.7677 11.7032 36.0003 13.7403 31.7169 13.7856ZM31.8472 0.898183C31.8459 0.89832 31.7609 0.896816 31.7179 0.895996C31.674 0.896543 31.5887 0.898183 31.5887 0.898183C28.7955 0.943695 26.4045 1.68638 24.6657 2.93081V1.61846H21.6317V21.1043H24.6657V14.2617C26.4044 15.506 28.7949 16.2486 31.5873 16.294C31.5873 16.294 31.674 16.2948 31.7166 16.2946C31.7616 16.295 31.8473 16.294 31.8473 16.294C37.709 16.1986 41.8028 13.0331 41.8028 8.5961C41.8028 4.1591 37.709 0.993718 31.8472 0.898183Z" fill="black" class="fill"></path></svg>
+ 
 
+  
+    <div :class="[openMenu ? 'flex' : 'hidden', 'w-full lg:flex lg:w-auto absolute md:relative bg-white']" class=" flex-col lg:flex-row lg:place-content-between z-30">
+      <div class="flex flex-col lg:flex-row space-x-4 px-3 py-3 z-20">
+        <!-- <svg xmlns="http://www.w3.org/2000/svg" width="85" height="22" viewBox="0 0 85 22" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M10.0905 13.7856H10.0898H10.0888C5.80572 13.7403 3.03806 11.7032 3.03806 8.59604C3.03806 5.48888 5.80572 3.45175 10.0888 3.40651C14.3738 3.45175 17.1411 5.48888 17.1411 8.59604C17.1411 11.7032 14.3738 13.7403 10.0905 13.7856ZM10.2155 0.898183C10.2144 0.89832 10.1292 0.896816 10.0863 0.895996C10.0424 0.896543 9.95715 0.898183 9.95715 0.898183C4.09395 0.993718 0 4.1591 0 8.5961C0 13.0331 4.09395 16.1986 9.95578 16.294C9.95578 16.294 10.0424 16.2948 10.0851 16.2946C10.1299 16.295 10.2157 16.294 10.2157 16.294C16.0774 16.1986 20.1712 13.0331 20.1712 8.5961C20.1712 4.1591 16.0774 0.993718 10.2155 0.898183Z" fill="black" class="fill"></path> <path fill-rule="evenodd" clip-rule="evenodd" d="M74.9195 13.7856H74.9188H74.9177C70.6348 13.7403 67.8671 11.7032 67.8671 8.59604C67.8671 5.48888 70.6348 3.45175 74.9177 3.40651C79.2027 3.45175 81.9701 5.48888 81.9701 8.59604C81.9701 11.7032 79.2027 13.7403 74.9195 13.7856ZM75.0445 0.898183C75.0434 0.89832 74.9584 0.896816 74.9152 0.895996C74.8715 0.896543 74.7862 0.898183 74.7862 0.898183C68.923 0.993718 64.829 4.1591 64.829 8.5961C64.829 13.0331 68.923 16.1986 74.785 16.294C74.785 16.294 74.8715 16.2948 74.9141 16.2946C74.9591 16.295 75.0448 16.294 75.0448 16.294C80.9065 16.1986 85.0003 13.0331 85.0003 8.5961C85.0003 4.1591 80.9065 0.993718 75.0445 0.898183Z" fill="black" class="fill"></path> <path fill-rule="evenodd" clip-rule="evenodd" d="M53.3494 13.7856H53.3487H53.3477C49.0648 13.7403 46.2971 11.7032 46.2971 8.59604C46.2971 5.48888 49.0648 3.45175 53.3477 3.40651C57.6326 3.45175 60.4001 5.48888 60.4001 8.59604C60.4001 11.7032 57.6326 13.7403 53.3494 13.7856ZM53.4745 0.898183C53.4734 0.89832 53.3884 0.896816 53.3452 0.895996C53.3015 0.896543 53.2162 0.898183 53.2162 0.898183C50.423 0.943695 48.032 1.68638 46.2932 2.93081V1.61846H43.2591V21.1043H46.2932V14.2617C48.0317 15.506 50.4223 16.2486 53.2149 16.294C53.2151 16.2942 53.3015 16.2948 53.344 16.2946C53.3891 16.295 53.4747 16.294 53.4747 16.294C59.3364 16.1986 63.4303 13.0331 63.4303 8.5961C63.4303 4.1591 59.3364 0.993718 53.4745 0.898183Z" fill="black" class="fill"></path> <path fill-rule="evenodd" clip-rule="evenodd" d="M31.7169 13.7856H31.7162H31.7154C27.4323 13.7403 24.6646 11.7032 24.6646 8.59604C24.6646 5.48888 27.4323 3.45175 31.7154 3.40651C36.0003 3.45175 38.7677 5.48888 38.7677 8.59604C38.7677 11.7032 36.0003 13.7403 31.7169 13.7856ZM31.8472 0.898183C31.8459 0.89832 31.7609 0.896816 31.7179 0.895996C31.674 0.896543 31.5887 0.898183 31.5887 0.898183C28.7955 0.943695 26.4045 1.68638 24.6657 2.93081V1.61846H21.6317V21.1043H24.6657V14.2617C26.4044 15.506 28.7949 16.2486 31.5873 16.294C31.5873 16.294 31.674 16.2948 31.7166 16.2946C31.7616 16.295 31.8473 16.294 31.8473 16.294C37.709 16.1986 41.8028 13.0331 41.8028 8.5961C41.8028 4.1591 37.709 0.993718 31.8472 0.898183Z" fill="black" class="fill"></path></svg> -->
+          <div @mouseover="showDropdown1 = !showDropdown1" class="text-gray-700 hover:text-blue-700" >Smartphone</div>
+          <div @mouseover="showDropdown2 = !showDropdown2" class="text-gray-700 hover:text-blue-700">Tablet</div>
+          <div>Audio</div>
+          <div>Wearables</div>
+          <div>Tentang OPPO</div>
+      </div>
+      <div class="flex flex-col lg:flex-row space-x-4 px-3 py-3 z-20 text-gray-700">
+          <div>Online Store</div>
+          <div>Komunitas</div>
+          <div>ColorOS</div>
+          <div>Dukungan</div>
+          <div>
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/></svg>
+            
+          </div>
+          <div>
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="M234-276q51-39 114-61.5T480-360q69 0 132 22.5T726-276q35-41 54.5-93T800-480q0-133-93.5-226.5T480-800q-133 0-226.5 93.5T160-480q0 59 19.5 111t54.5 93Zm246-164q-59 0-99.5-40.5T340-580q0-59 40.5-99.5T480-720q59 0 99.5 40.5T620-580q0 59-40.5 99.5T480-440Zm0 360q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q53 0 100-15.5t86-44.5q-39-29-86-44.5T480-280q-53 0-100 15.5T294-220q39 29 86 44.5T480-160Zm0-360q26 0 43-17t17-43q0-26-17-43t-43-17q-26 0-43 17t-17 43q0 26 17 43t43 17Zm0-60Zm0 360Z"/></svg>
+          </div>
+
+      </div>
     </div>
-  </div>
+ 
 
   <div @mouseleave="showDropdown1 = !showDropdown1" class="absolute p-5 flex flex-row space-x-3 z-20 bg-white h-1/2 w-full" v-if="showDropdown1">
       <MenuItem title="Oppo Find N5" image="/dropdown/440-440-oppo-find-n5.webp"/>
@@ -56,64 +75,33 @@ const showDropdown2 = ref(false)
       <MenuItem title="Oppo Pad Air" image="/dropdown/440-440-oppo-pad-air.webp"/>
       
   </div>
+  <section class="flex flex-col justify-start">
+    <picture>
+      <source srcset="/hero/id-s3-blue-s2-white-2-1536-800-pad-v3.jpg" alt="hero-1" type="image/webp" media="(min-width: 640px)">
+      <source srcset="/hero/id-s3-blue-s2-white-2-720-1060-mo-v3.jpg" alt="hero-1" media="(max-width: 640px)">
+      <img src="/hero/id-s3-blue-s2-white-2-720-1060-mo-v3.jpg" alt="hero-1">
+    </picture>
 
-  <img src="/hero/id-s3-blue-s2-white-2-1536-800-pad-v3.jpg" class="relative w-full"/>
-  <p class="absolute top-1/9 left-1/12 bg-black text-white text-sm rounded-md px-2 py-2 z-10">OPPO AI Phone</p>
-  <p class="absolute top-1/6 left-1/12 text-4xl font-semibold z-10">Reno14 Series <sup>5G</sup></p>
-  <p class="absolute top-1/4 left-1/12 text-2xl z-10">AI Flash Photography | AI Editor 2.0<br>Underwater 4K Video</p>
-  <button class="absolute top-9/10 left-1/12 text-sm rounded-xl px-2 py-2 border-2 z-10">Lebih Lanjut</button>
-  <button class="absolute top-9/10 left-1/6 text-sm rounded-xl px-2 py-2 border-2 bg-black text-white z-10">Beli Sekarang</button>
+  </section>
 
-  <img src="/hero/1536-800.jpg" class="relative w-full"/>
-  <p class="absolute top-7/6 left-1/12 bg-black text-white text-sm rounded-md px-2 py-2 z-10">OPPO AI Phone</p>
-  <p class="absolute top-5/4 left-1/12 text-4xl font-semibold z-10">OPPO Find N5</p>
-  <p class="absolute top-4/3 left-1/12 text-2xl z-10">Co developed with Hasselblad</p>
-  <button class="absolute top-4/2 left-1/12 text-sm rounded-xl px-2 py-2 border-2 z-10">Lebih Lanjut</button>
-  <button class="absolute top-4/2 left-1/6 text-sm rounded-xl px-2 py-2 border-2 bg-black text-white z-10">Beli Sekarang</button>
 
-  <img src="/hero/Pad.jpg" class="relative w-full"/>
-  <p class="absolute top-13/6 left-1/12 text-4xl font-semibold z-10">OPPO A5 Pro</p>
-  <p class="absolute top-9/4 left-1/12 text-2xl z-10">IP69, IP68, IP66 tahan air dan debu
-  <br>Tahan benturan kelas militer
-  <br>Baterai besar 5800 mAh</p>
-  <button class="absolute top-6/2 left-1/12 text-sm rounded-xl px-2 py-2 border-2 z-10">Lebih Lanjut</button>
-  <button class="absolute top-6/2 left-1/6 text-sm rounded-xl px-2 py-2 border-2 bg-black text-white z-10">Beli Sekarang</button>
-
-  <div class="flex flex-row place-content-between">
-    <div class="p-7 text-2xl">Produk Baru</div>
-    <div class="p-7">Tampilkan semua</div>
-  </div>
-  
-
-    <img src="/hero/2624-920-white.jpg.thumb.webp" class=" w-5/6 mx-5"/>
-    <p class="absolute top-20/6 left-1/12 pt-10 text-2xl font-bold m-2">OPPO Find X8</p>
-    <div class="bg-green-200 absolute top-11/3 left-1/12 m-3">
-      <div class="p-3">Powerful Camera. <br>
-      Powerful AI.
-      </div>
-      <div class="flex flex-row p-3 space-x-2 underline">
-        <div>Lebih Lanjut</div>
-        <div>Beli sekarang </div>
-      </div>
-    </div>
-
-    <div class="flex flex-row m-7 flex-wrap">
-      <Product class-name="bg-gray-200 m-3 p-3 w-2/5" 
+    <div class="flex flex-col lg:flex-row m-7 flex-wrap">
+      <Product class-name="bg-gray-200 m-3 p-3 w-4/5 lg:w-2/5" 
     image="/product/640-640-white.png.thumb.webp" title="Oppo Find X8 Pro" desc="Powerful Camera <br> Powerful AI"/>
    
-      <Product class-name="bg-gray-200 m-3 p-3 w-2/5" 
+      <Product class-name="bg-gray-200 m-3 p-3 w-4/5 lg:w-2/5" 
     image="/product/640-640-green.png.thumb.webp" title="Oppo A5" desc="Jagonya bertahan"/>
 
-    <Product class-name="bg-gray-200 m-3 p-3 w-2/5" 
+    <Product class-name="bg-gray-200 m-3 p-3 w-4/5 lg:w-2/5" 
     image="/product/640-640-blue.png.thumb.webp" title="Oppo A5" desc="Jagonya bertahan"/>
 
-    <Product class-name="bg-gray-200 m-3 p-3 w-2/5" 
+    <Product class-name="bg-gray-200 m-3 p-3 w-4/5 lg:w-2/5" 
     image="/product/640-640-silver.png.thumb.webp" title="Oppo Pad 3 Matte Display Edition" desc="Unleash AI Power"/>
 
-    <Product class-name="bg-gray-200 m-3 p-3 w-2/5" 
+    <Product class-name="bg-gray-200 m-3 p-3 w-4/5 lg:w-2/5" 
     image="/product/640-640-silver-v1.png.thumb.webp" title="Oppo Pad SE" desc="Baterai tahan lama 9340 mAh"/>
 
-    <Product class-name="bg-gray-200 m-3 p-3 w-2/5" 
+    <Product class-name="bg-gray-200 m-3 p-3 w-4/5 lg:w-2/5" 
     image="/product/640-640-gold.png.thumb.webp" title="Oppo Watch X2 Mini" desc="Style to spotlight"/>
   
     </div>
