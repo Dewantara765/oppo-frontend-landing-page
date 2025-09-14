@@ -7,7 +7,7 @@
 <template>
 <div>
    <div>
-         <p class="items-center p-2">{{ props.title }}</p>
+         <p class="items-center p-2 font-semibold">{{ props.title }}</p>
       </div>
 </div>
 </template>
