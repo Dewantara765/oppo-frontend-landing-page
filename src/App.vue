@@ -5,9 +5,14 @@ import MenuItem from './components/MenuItem.vue';
 import Product from './components/Product.vue';
 import Event from './components/Event.vue';
 import Accordion from './components/Accordion.vue';
+import MenuItem2 from './components/MenuItem2.vue';
 
 const showDropdown1 = ref(false)
 const showDropdown2 = ref(false)
+const showDropdown3 = ref(false)
+const showDropdown4 = ref(false)
+const showDropdown5 = ref(false)
+
 
 const openMenu = ref(false)
 
@@ -33,12 +38,71 @@ const openMenu = ref(false)
   
     <div :class="[openMenu ? 'flex' : 'hidden', 'w-full lg:flex lg:w-auto absolute md:relative bg-white']" class=" flex-col lg:flex-row lg:place-content-between z-30">
       <div class="flex flex-col lg:flex-row space-x-4 px-3 py-3 z-20">
-        <!-- <svg xmlns="http://www.w3.org/2000/svg" width="85" height="22" viewBox="0 0 85 22" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M10.0905 13.7856H10.0898H10.0888C5.80572 13.7403 3.03806 11.7032 3.03806 8.59604C3.03806 5.48888 5.80572 3.45175 10.0888 3.40651C14.3738 3.45175 17.1411 5.48888 17.1411 8.59604C17.1411 11.7032 14.3738 13.7403 10.0905 13.7856ZM10.2155 0.898183C10.2144 0.89832 10.1292 0.896816 10.0863 0.895996C10.0424 0.896543 9.95715 0.898183 9.95715 0.898183C4.09395 0.993718 0 4.1591 0 8.5961C0 13.0331 4.09395 16.1986 9.95578 16.294C9.95578 16.294 10.0424 16.2948 10.0851 16.2946C10.1299 16.295 10.2157 16.294 10.2157 16.294C16.0774 16.1986 20.1712 13.0331 20.1712 8.5961C20.1712 4.1591 16.0774 0.993718 10.2155 0.898183Z" fill="black" class="fill"></path> <path fill-rule="evenodd" clip-rule="evenodd" d="M74.9195 13.7856H74.9188H74.9177C70.6348 13.7403 67.8671 11.7032 67.8671 8.59604C67.8671 5.48888 70.6348 3.45175 74.9177 3.40651C79.2027 3.45175 81.9701 5.48888 81.9701 8.59604C81.9701 11.7032 79.2027 13.7403 74.9195 13.7856ZM75.0445 0.898183C75.0434 0.89832 74.9584 0.896816 74.9152 0.895996C74.8715 0.896543 74.7862 0.898183 74.7862 0.898183C68.923 0.993718 64.829 4.1591 64.829 8.5961C64.829 13.0331 68.923 16.1986 74.785 16.294C74.785 16.294 74.8715 16.2948 74.9141 16.2946C74.9591 16.295 75.0448 16.294 75.0448 16.294C80.9065 16.1986 85.0003 13.0331 85.0003 8.5961C85.0003 4.1591 80.9065 0.993718 75.0445 0.898183Z" fill="black" class="fill"></path> <path fill-rule="evenodd" clip-rule="evenodd" d="M53.3494 13.7856H53.3487H53.3477C49.0648 13.7403 46.2971 11.7032 46.2971 8.59604C46.2971 5.48888 49.0648 3.45175 53.3477 3.40651C57.6326 3.45175 60.4001 5.48888 60.4001 8.59604C60.4001 11.7032 57.6326 13.7403 53.3494 13.7856ZM53.4745 0.898183C53.4734 0.89832 53.3884 0.896816 53.3452 0.895996C53.3015 0.896543 53.2162 0.898183 53.2162 0.898183C50.423 0.943695 48.032 1.68638 46.2932 2.93081V1.61846H43.2591V21.1043H46.2932V14.2617C48.0317 15.506 50.4223 16.2486 53.2149 16.294C53.2151 16.2942 53.3015 16.2948 53.344 16.2946C53.3891 16.295 53.4747 16.294 53.4747 16.294C59.3364 16.1986 63.4303 13.0331 63.4303 8.5961C63.4303 4.1591 59.3364 0.993718 53.4745 0.898183Z" fill="black" class="fill"></path> <path fill-rule="evenodd" clip-rule="evenodd" d="M31.7169 13.7856H31.7162H31.7154C27.4323 13.7403 24.6646 11.7032 24.6646 8.59604C24.6646 5.48888 27.4323 3.45175 31.7154 3.40651C36.0003 3.45175 38.7677 5.48888 38.7677 8.59604C38.7677 11.7032 36.0003 13.7403 31.7169 13.7856ZM31.8472 0.898183C31.8459 0.89832 31.7609 0.896816 31.7179 0.895996C31.674 0.896543 31.5887 0.898183 31.5887 0.898183C28.7955 0.943695 26.4045 1.68638 24.6657 2.93081V1.61846H21.6317V21.1043H24.6657V14.2617C26.4044 15.506 28.7949 16.2486 31.5873 16.294C31.5873 16.294 31.674 16.2948 31.7166 16.2946C31.7616 16.295 31.8473 16.294 31.8473 16.294C37.709 16.1986 41.8028 13.0331 41.8028 8.5961C41.8028 4.1591 37.709 0.993718 31.8472 0.898183Z" fill="black" class="fill"></path></svg> -->
+        <div class="flex justify-between">
           <div @mouseover="showDropdown1 = !showDropdown1" class="text-gray-700 hover:text-blue-700" >Smartphone</div>
+          <svg @click="showDropdown1 = !showDropdown1" class="block lg:hidden" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#434343"><path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"/></svg>
+        </div>
+          <div class="p-5 flex lg:hidden flex-row space-x-4 z-20 bg-white h-1/2 w-full overflow-x-auto" v-if="showDropdown1">
+            <MenuItem title="Oppo Find N5" image="/dropdown/440-440-oppo-find-n5.webp"/>
+            <MenuItem title="Oppo Find X8 Pro" image="/dropdown/440-440-oppo-find-x8-pro.webp"/>
+            <MenuItem title="Oppo Find X8" image="/dropdown/440-440-oppo-find-x8.webp"/>
+            <MenuItem title="Oppo Reno14 Pro" image="/dropdown/440-440-oppo-reno-14-pro.webp"/>
+            <MenuItem title="Oppo Reno14" image="/dropdown/440-440-oppo-reno-14.webp"/> 
+            <MenuItem title="Oppo A5 Pro" image="/dropdown/pink-440-440-oppo-a5-pro.webp"/> 
+            
+        </div>
+        <div class="flex justify-between">
           <div @mouseover="showDropdown2 = !showDropdown2" class="text-gray-700 hover:text-blue-700">Tablet</div>
-          <div>Audio</div>
-          <div>Wearables</div>
-          <div>Tentang OPPO</div>
+           <svg @click="showDropdown2 = !showDropdown2" class="block lg:hidden" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#434343"><path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"/></svg>
+        </div>
+          <div class="p-5 flex lg:hidden flex-row space-x-4 z-20 bg-white h-1/2 w-full overflow-x-auto" v-if="showDropdown2">
+            <MenuItem title="Oppo Pad SE" image="/dropdown/440-440-oppo-pad-se.webp"/>
+            <MenuItem title="Oppo Pad Matte Display Edition" image="/dropdown/440-440-oppo-pad-matte.webp"/>
+            <MenuItem title="Oppo Pad Neo" image="/dropdown/oppo-pad-neo.webp"/>
+            <MenuItem title="Oppo Pad 2" image="/dropdown/oppo-pad-2.webp"/>
+            <MenuItem title="Oppo Pad Air" image="/dropdown/440-440-oppo-pad-air.webp"/>
+            
+        </div>
+        <div class="flex justify-between">
+          <div @mouseover="showDropdown3 = !showDropdown3" class="text-gray-700 hover:text-blue-700">Audio</div>
+          <svg @click="showDropdown3 = !showDropdown3" class="block lg:hidden" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#434343"><path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"/></svg>
+        </div>
+        <div class="p-5 flex lg:hidden flex-row space-x-4 z-20 bg-white h-1/2 w-full overflow-x-auto" v-if="showDropdown3">
+           <MenuItem title="Oppo Enco Buds3 Pro" image="/product/white-440-440-v2.png.thumb.webp"/>
+           <MenuItem title="Oppo Enco Air4" image="/product/green-440-440-v1.png.thumb.webp"/>
+           <MenuItem title="Oppo Enco Buds3" image="/product/buds3-440-440-1-v2.png.thumb.webp"/>
+           <MenuItem title="Oppo Enco X3i" image="/product/440_440-Blue.png.thumb.webp"/>
+           <MenuItem title="Oppo Enco Air3" image="/product/enco-air3-white-440_440-v3.png.thumb.webp"/>
+           <MenuItem title="Oppo Enco Air2 Pro" image="/product/Enco-air2-pro.png.thumb.webp"/>
+        </div>
+          <div class="flex justify-between">
+          <div @mouseover="showDropdown4 = !showDropdown4" class="text-gray-700 hover:text-blue-700">Wearables</div>
+          <svg @click="showDropdown4 = !showDropdown4" class="block lg:hidden" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#434343"><path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"/></svg>
+        </div>
+        <div class="p-5 flex lg:hidden flex-row space-x-4 z-20 bg-white h-1/2 w-full overflow-x-auto" v-if="showDropdown4">
+           <MenuItem title="Oppo Watch X2" image="/product/blue-440-440.png.thumb.webp"/>
+           <MenuItem title="Oppo Watch X2 Mini" image="/product/gold.png.thumb.webp"/>
+           <MenuItem title="Oppo Watch X" image="/product/440-440PX-brown-v1.png.thumb.webp"/>
+           <MenuItem title="Oppo Band 2" image="/product/OPPO Band2-black.png"/>
+           <MenuItem title="Oppo Band" image="/product/OPPO-Band-black.png.thumb.webp"/>
+           
+           
+           
+        </div>
+          <div class="flex justify-between">
+          <div @mouseover="showDropdown5 = !showDropdown5" class="text-gray-700 hover:text-blue-700">Tentang OPPO</div>
+          <svg @click="showDropdown5 = !showDropdown5" class="block lg:hidden" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#434343"><path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"/></svg>
+        </div>
+        <div class="p-5 flex lg:hidden flex-row space-x-4 z-20 bg-white h-1/2 w-full overflow-x-auto" v-if="showDropdown5">
+          <MenuItem2 title="Cerita Kami"/>
+          <MenuItem2 title="OPPO AI"/>
+          <MenuItem2 title="Kanal Berita"/>
+          <MenuItem2 title="Kegiatan"/>
+          <MenuItem2 title="My OPPO"/>
+          <MenuItem2 title="OPPO Brand Store"/>
+           
+           
+        </div>
       </div>
       <div class="flex flex-col lg:flex-row space-x-4 px-3 py-3 z-20 text-gray-700">
           <div>Online Store</div>
@@ -57,7 +121,7 @@ const openMenu = ref(false)
     </div>
  
 
-  <div @mouseleave="showDropdown1 = !showDropdown1" class="absolute p-5 flex flex-row space-x-3 z-20 bg-white h-1/2 w-full" v-if="showDropdown1">
+  <div @mouseleave="showDropdown1 = !showDropdown1" class="absolute p-5 lg:flex flex-row space-x-3 z-20 bg-white h-1/2 w-full hidden" v-if="showDropdown1">
       <MenuItem title="Oppo Find N5" image="/dropdown/440-440-oppo-find-n5.webp"/>
       <MenuItem title="Oppo Find X8 Pro" image="/dropdown/440-440-oppo-find-x8-pro.webp"/>
       <MenuItem title="Oppo Find X8" image="/dropdown/440-440-oppo-find-x8.webp"/>
@@ -67,12 +131,44 @@ const openMenu = ref(false)
       
   </div>
 
-    <div @mouseleave="showDropdown2 = !showDropdown2" class="absolute p-5 flex flex-row space-x-3 z-20 bg-white h-1/2 w-full" v-if="showDropdown2">
+    <div @mouseleave="showDropdown2 = !showDropdown2" class="absolute p-5 hidden lg:flex flex-row space-x-3 z-20 bg-white h-1/2 w-full" v-if="showDropdown2">
       <MenuItem title="Oppo Pad SE" image="/dropdown/440-440-oppo-pad-se.webp"/>
       <MenuItem title="Oppo Pad Matte Display Edition" image="/dropdown/440-440-oppo-pad-matte.webp"/>
       <MenuItem title="Oppo Pad Neo" image="/dropdown/oppo-pad-neo.webp"/>
       <MenuItem title="Oppo Pad 2" image="/dropdown/oppo-pad-2.webp"/>
       <MenuItem title="Oppo Pad Air" image="/dropdown/440-440-oppo-pad-air.webp"/>
+      
+  </div>
+
+   <div @mouseleave="showDropdown3 = !showDropdown3" class="absolute p-5 hidden lg:flex flex-row space-x-3 z-20 bg-white h-1/2 w-full" v-if="showDropdown3">
+      <MenuItem title="Oppo Enco Buds3 Pro" image="/product/white-440-440-v2.png.thumb.webp"/>
+      <MenuItem title="Oppo Enco Air4" image="/product/green-440-440-v1.png.thumb.webp"/>
+      <MenuItem title="Oppo Enco Buds3" image="/product/buds3-440-440-1-v2.png.thumb.webp"/>
+      <MenuItem title="Oppo Enco X3i" image="/product/440_440-Blue.png.thumb.webp"/>
+      <MenuItem title="Oppo Enco Air3" image="/product/enco-air3-white-440_440-v3.png.thumb.webp"/>
+      <MenuItem title="Oppo Enco Air2 Pro" image="/product/Enco-air2-pro.png.thumb.webp"/>
+      
+  </div>
+   <div @mouseleave="showDropdown4 = !showDropdown4" class="absolute p-5 hidden lg:flex flex-row space-x-3 z-20 bg-white h-1/2 w-full" v-if="showDropdown4">
+      <MenuItem title="Oppo Watch X2" image="/product/blue-440-440.png.thumb.webp"/>
+      <MenuItem title="Oppo Watch X2 Mini" image="/product/gold.png.thumb.webp"/>
+      <MenuItem title="Oppo Watch X" image="/product/440-440PX-brown-v1.png.thumb.webp"/>
+      <MenuItem title="Oppo Band 2" image="/product/OPPO Band2-black.png"/>
+      <MenuItem title="Oppo Band" image="/product/OPPO-Band-black.png.thumb.webp"/>
+           
+     
+      
+  </div>
+    <div @mouseleave="showDropdown5 = !showDropdown5" class="absolute p-5 hidden lg:flex flex-row space-x-3 z-20 bg-white h-1/2 w-full" v-if="showDropdown5">
+          <MenuItem2 title="Cerita Kami"/>
+          <MenuItem2 title="OPPO AI"/>
+          <MenuItem2 title="Kanal Berita"/>
+          <MenuItem2 title="Kegiatan"/>
+          <MenuItem2 title="My OPPO"/>
+          <MenuItem2 title="OPPO Brand Store"/>
+           
+           
+     
       
   </div>
   <section class="relative flex flex-col justify-start">
