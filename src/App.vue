@@ -6,6 +6,7 @@ import Product from './components/Product.vue';
 import Event from './components/Event.vue';
 import Accordion from './components/Accordion.vue';
 import MenuItem2 from './components/MenuItem2.vue';
+import Footer from './components/Footer.vue';
 
 const showDropdown1 = ref(false)
 const showDropdown2 = ref(false)
@@ -179,7 +180,7 @@ const openMenu = ref(false)
     </picture>
 
    
-      <img class="absolute inset-x-10 lg:inset-x-20 inset-y-8 z-10 w-30" src="/hero/homepage-black-pc.png"/>
+      
       <p class="absolute inset-x-10 lg:inset-x-20 inset-y-15 text-3xl lg:text-5xl">Reno14 Series <sup>5G</sup></p>
       <p class="absolute inset-x-10 lg:inset-x-20 inset-y-30 text-xl lg:text-2xl">AI Flash Photography | AI Editor 2.0</p>
       <p class="absolute inset-x-10 lg:inset-x-20 inset-y-45 lg:inset-y-40 text-xl lg:text-2xl">Underwater 4K Video</p>
@@ -190,9 +191,9 @@ const openMenu = ref(false)
 
   <section class="relative flex flex-col">
     <picture>
-      <source srcset="/hero/1536-800.jpg" alt="hero-1" type="image/webp" media="(min-width: 640px)">
-      <source srcset="/hero/720-1060.jpg.thumb.webp" alt="hero-1" media="(max-width: 640px)">
-      <img src="/hero/720-1060.jpg.thumb.webp" alt="hero-1">
+      <source srcset="/hero/1536-800.jpg" alt="oppo find n5" type="image/webp" media="(min-width: 640px)">
+      <source srcset="/hero/720-1060.jpg.thumb.webp" alt="oppo find n5" media="(max-width: 640px)">
+      <img src="/hero/720-1060.jpg.thumb.webp" alt="oppo find n5">
     </picture>
 
    
@@ -219,11 +220,25 @@ const openMenu = ref(false)
       <p class="absolute inset-x-10 lg:inset-x-20 inset-y-35 lg:inset-y-40 text-lg lg:text-2xl">Tahan Benturan Kelas Militer</p>
       <p class="absolute inset-x-10 lg:inset-x-20 inset-y-45 lg:inset-y-50 text-lg lg:text-2xl">Baterai Besar 5800 mAh</p>
       <div class="absolute inset-x-10 lg:inset-x-20 inset-y-55 lg:inset-y-150 w-25 border-2 h-8 rounded-xl text-center">Lebih lanjut</div>
-      <div class="absolute inset-x-40 lg:inset-x-50 inset-y-55 lg:inset-y-150 w-30 border-2 h-10 rounded-xl text-center bg-black text-white">Beli sekarang</div>
-    
+      <div class="absolute inset-x-40 lg:inset-x-50 inset-y-55 lg:inset-y-150 w-30 border-2 h-10 rounded-xl text-center bg-black text-white">Beli sekarang</div> 
+
+    </section>
+
+     <section class="relative flex flex-col">
+        <picture>
+        <source srcset="/hero/2624-920-white.jpg.thumb.webp" alt="oppo find x8" type="image/webp" media="(min-width: 640px)" class="w-4/5">
+        <source srcset="/hero/656-900-white.jpg.thumb.webp" alt="oppo find x8" media="(max-width: 640px)" class="w-4/5">
+        <img src="/hero/656-900-white.jpg.thumb.webp" alt="oppo find x8" class="w-4/5 mx-auto">
+        <p class="absolute inset-x-30 lg:inset-x-45 inset-y-5 text-3xl lg:text-4xl">OPPO Find X8</p>
+        <div class="absolute left-40 bg-green-200 bottom-2 h-40 w-50 text-center">
+           <div class="absolute left-5 top-5">Powerful Camera</div>
+           <div class="absolute left-5 top-12">Powerful AI</div>
+           <div class="absolute left-3 bottom-2 text-sm underline">Lebih Lanjut</div>
+           <div class="absolute right-3 bottom-2 text-sm underline">Beli sekarang</div>
+          
+        </div>
+    </picture>
   </section>
-
-
     <div class="flex flex-col lg:flex-row m-7 flex-wrap">
       <Product class-name="bg-gray-200 m-3 p-3 w-4/5 lg:w-2/5" 
     image="/product/640-640-white.png.thumb.webp" title="Oppo Find X8 Pro" desc="Powerful Camera <br> Powerful AI"/>
@@ -327,41 +342,43 @@ const openMenu = ref(false)
     <div class="flex flex-row space-x-7 ps-15">
       <div class="font-semibold">Smartphone
         <div class="h-5"></div>
-        <div class="font-normal text-gray-400">OPPO Find X8 Pro</div>
-        <div class="font-normal text-gray-400">OPPO Find N5</div>
-        <div class="font-normal text-gray-400">OPPO Find N3</div>
-        <div class="font-normal text-gray-400">OPPO Find N3 Flip</div>
-        <div class="font-normal text-gray-400">OPPO Reno14 Pro 5G</div>
-        <div class="font-normal text-gray-400">OPPO Reno14 5G</div>
-        <div class="font-normal text-gray-400">OPPO Reno14 F 5G</div>
-        <div class="font-normal text-gray-400">OPPO Reno13 5G</div>
-        <div class="font-normal text-gray-400">OPPO Reno13 F 5G</div>
-        <div class="font-normal text-gray-400">OPPO Reno13 F</div>
-        <div class="font-normal text-gray-400">OPPO A5 Pro 5G</div>
-        <div class="font-normal text-gray-400">OPPO A5 Pro</div>
-        <div class="font-normal text-gray-400">OPPO A5i Pro</div>
-        <div class="font-normal text-gray-400">OPPO A5i</div>
-        <div class="font-normal text-gray-400">OPPO A3</div>
-        <div class="font-normal text-gray-400">OPPO A3x</div>
+        <Footer title="OPPO Find X8 Pro"/>
+        <Footer title="OPPO Find X8"/>
+        <Footer title="OPPO Find N5"/>
+        <Footer title="OPPO Find N3"/>
+        <Footer title="OPPO Find N3 Flip"/>
+        <Footer title="OPPO Reno14 Pro 5G"/>
+        <Footer title="OPPO Reno14 5G"/>
+        <Footer title="OPPO Reno14 F 5G"/>
+        <Footer title="OPPO Reno13 5G"/>
+        <Footer title="OPPO Reno13 F 5G"/>
+        <Footer title="OPPO Reno13 F"/>
+        <Footer title="OPPO A5 Pro 5G"/>
+        <Footer title="OPPO A5 Pro"/>
+        <Footer title="OPPO A5i Pro"/>
+        <Footer title="OPPO A5i"/>
+        <Footer title="OPPO A3"/>
+        <Footer title="OPPO A3x"/>
         <div class="font-normal text-gray-400 w-50">Tampilkan semua smartphone</div>
 
       </div>
       <div class="font-semibold">Produk IOT
       <div class="h-5"></div>
-        <div class="font-normal text-gray-400">OPPO Pad SE</div>
-        <div class="font-normal text-gray-400 w-50">OPPO Pad 3 Matte Display Edition</div>
-        <div class="font-normal text-gray-400">OPPO Pad Neo</div>
-        <div class="font-normal text-gray-400">OPPO Pad 2</div>
-        <div class="font-normal text-gray-400">OPPO Enco Air4</div>
-        <div class="font-normal text-gray-400">OPPO Enco Buds3 Pro</div>
-        <div class="font-normal text-gray-400">OPPO Enco Buds 3</div>
-        <div class="font-normal text-gray-400">OPPO Enco X3i</div>
-        <div class="font-normal text-gray-400">OPPO Enco Air2 Pro</div>
-        <div class="font-normal text-gray-400">OPPO Enco Buds2</div>
-        <div class="font-normal text-gray-400">OPPO Band 2</div>
-        <div class="font-normal text-gray-400">OPPO Watch X2</div>
-        <div class="font-normal text-gray-400">OPPO Watch X2 Mini</div>
-        <div class="font-normal text-gray-400">OPPO Watch X</div>
+        <Footer title="OPPO Pad SE"/>
+        <Footer title="OPPO Pad Matte Display Edition"/>
+        <Footer title="OPPO Pad Neo"/>
+        <Footer title="OPPO Pad 2"/>
+        <Footer title="OPPO Enco Air4"/>
+        <Footer title="OPPO Enco Buds3 Pro"/>
+        <Footer title="OPPO Enco Buds 3"/>
+        <Footer title="OPPO Enco X3i"/>
+        <Footer title="OPPO Enco Air2 Pro"/>
+        <Footer title="OPPO Enco Buds2"/>
+        <Footer title="OPPO Band 2"/>
+        <Footer title="OPPO Watch X2"/>
+        <Footer title="OPPO Watch X2 Mini"/>
+        <Footer title="OPPO Watch X"/>
+      
       </div>
     </div>
 
