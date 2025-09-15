@@ -13,6 +13,8 @@ const showDropdown2 = ref(false)
 const showDropdown3 = ref(false)
 const showDropdown4 = ref(false)
 const showDropdown5 = ref(false)
+const showDropdown6 = ref(false)
+const showDropdown7 = ref(false)
 
 
 const openMenu = ref(false)
@@ -121,7 +123,7 @@ const openMenu = ref(false)
       </div>
     </div>
  
-
+ 
   <div @mouseleave="showDropdown1 = !showDropdown1" class="absolute p-5 lg:flex flex-row space-x-3 z-20 bg-white h-1/2 w-full hidden" v-if="showDropdown1">
       <MenuItem title="Oppo Find N5" image="/dropdown/440-440-oppo-find-n5.webp"/>
       <MenuItem title="Oppo Find X8 Pro" image="/dropdown/440-440-oppo-find-x8-pro.webp"/>
@@ -229,8 +231,8 @@ const openMenu = ref(false)
         <source srcset="/hero/2624-920-white.jpg.thumb.webp" alt="oppo find x8" type="image/webp" media="(min-width: 640px)" class="w-4/5">
         <source srcset="/hero/656-900-white.jpg.thumb.webp" alt="oppo find x8" media="(max-width: 640px)" class="w-4/5">
         <img src="/hero/656-900-white.jpg.thumb.webp" alt="oppo find x8" class="w-4/5 mx-auto">
-        <p class="absolute inset-x-30 lg:inset-x-45 inset-y-5 text-3xl lg:text-4xl">OPPO Find X8</p>
-        <div class="absolute left-40 bg-green-200 bottom-2 h-40 w-50 text-center">
+        <p class="absolute inset-x-25 lg:inset-x-30  inset-y-5 text-2xl lg:text-4xl">OPPO Find X8</p>
+        <div class="absolute left-25 lg:left-40 bg-green-200 bottom-2 h-40 w-50 text-center">
            <div class="absolute left-5 top-5">Powerful Camera</div>
            <div class="absolute left-5 top-12">Powerful AI</div>
            <div class="absolute left-3 bottom-2 text-sm underline">Lebih Lanjut</div>
@@ -307,10 +309,12 @@ const openMenu = ref(false)
   </div>
 
   <div class="bg-slate-200 p-7">
-    <div class="flex flex-row">
-      <p class="whitespace-pre-line text-3xl w-80">Info Lebih Lanjut 
+    <div class="lg:flex flex-row">
+      <p class="whitespace-pre-line text-3xl w-80 hidden lg:block">Info Lebih Lanjut 
         Layanan dan Dukungan</p>
-      <div class="w-120">
+      <p class="text-3xl block lg:hidden">Info Lebih Lanjut 
+        Layanan dan Dukungan</p>
+      <div class="hidden lg:block w-120">
       </div>
       <div class="flex flex-col">
         <Accordion title="Pencarian OPPO Brand Store Offline"/>
@@ -339,8 +343,8 @@ const openMenu = ref(false)
     
     <hr class="bg-white">
 
-    <div class="flex flex-row space-x-7 ps-15">
-      <div class="font-semibold">Smartphone
+    <div class="hidden lg:flex flex-row space-x-7 ps-15">
+      <div class="hidden lg:block font-semibold">Smartphone
         <div class="h-5"></div>
         <Footer title="OPPO Find X8 Pro"/>
         <Footer title="OPPO Find X8"/>
@@ -379,6 +383,53 @@ const openMenu = ref(false)
         <Footer title="OPPO Watch X2 Mini"/>
         <Footer title="OPPO Watch X"/>
       
+      </div>
+    </div>
+
+    <div class="flex lg:hidden flex-col items-start pt-8 ps-15">
+      <div class="flex place-content-between w-80 py-3">
+        <div class="font-semibold text-2xl">Smartphone</div>
+        <div><svg @click="showDropdown6 = !showDropdown6" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ffffff"><path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/></svg></div>
+      </div>
+      <div v-if="showDropdown6">
+        <Footer title="OPPO Find X8 Pro"/>
+        <Footer title="OPPO Find X8"/>
+        <Footer title="OPPO Find N5"/>
+        <Footer title="OPPO Find N3"/>
+        <Footer title="OPPO Find N3 Flip"/>
+        <Footer title="OPPO Reno14 Pro 5G"/>
+        <Footer title="OPPO Reno14 5G"/>
+        <Footer title="OPPO Reno14 F 5G"/>
+        <Footer title="OPPO Reno13 5G"/>
+        <Footer title="OPPO Reno13 F 5G"/>
+        <Footer title="OPPO Reno13 F"/>
+        <Footer title="OPPO A5 Pro 5G"/>
+        <Footer title="OPPO A5 Pro"/>
+        <Footer title="OPPO A5i Pro"/>
+        <Footer title="OPPO A5i"/>
+        <Footer title="OPPO A3"/>
+        <Footer title="OPPO A3x"/>
+        <div class="font-normal text-gray-400 w-50">Tampilkan semua smartphone</div>
+        </div>
+      <div class="flex place-content-between w-80 pb-8">
+        <div class="font-semibold text-2xl">Produk IOT</div>
+        <div><svg @click="showDropdown7 = !showDropdown7" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ffffff"><path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/></svg></div>
+      </div>
+      <div v-if="showDropdown7" class="pb-5">
+        <Footer title="OPPO Pad SE"/>
+          <Footer title="OPPO Pad Matte Display Edition"/>
+          <Footer title="OPPO Pad Neo"/>
+          <Footer title="OPPO Pad 2"/>
+          <Footer title="OPPO Enco Air4"/>
+          <Footer title="OPPO Enco Buds3 Pro"/>
+          <Footer title="OPPO Enco Buds 3"/>
+          <Footer title="OPPO Enco X3i"/>
+          <Footer title="OPPO Enco Air2 Pro"/>
+          <Footer title="OPPO Enco Buds2"/>
+          <Footer title="OPPO Band 2"/>
+          <Footer title="OPPO Watch X2"/>
+          <Footer title="OPPO Watch X2 Mini"/>
+          <Footer title="OPPO Watch X"/>
       </div>
     </div>
 
